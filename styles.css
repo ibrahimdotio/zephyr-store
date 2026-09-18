@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
-  color-scheme: dark;
-  --bg: #111211;
-  --surface: #1a1b18;
-  --text: #f4f5ed;
-  --muted: #a1a39a;
-  --line: #30322c;
-  --accent: #dafa75;
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #f5f7f3;
+  --text: #182017;
+  --muted: #626a5d;
+  --line: #e0e5dc;
+  --accent: #386a26;
+  --accent-fill: #dafa75;
   font-family: "DM Sans", sans-serif;
   color: var(--text);
   background: var(--bg);
@@ -45,8 +46,8 @@ button {
   color: inherit;
 }
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--accent-fill);
+  color: var(--text);
 }
 .shell {
   width: min(1320px, calc(100% - 112px));
@@ -108,6 +109,7 @@ nav a span {
   padding-block: 45px 58px;
 }
 .hero-copy {
+  min-width: 0;
   padding-top: 14px;
 }
 .eyebrow {
@@ -133,9 +135,9 @@ p {
 h1 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  font-size: clamp(44px, 5.25vw, 76px);
+  font-size: clamp(40px, 4.5vw, 68px);
   line-height: 1.07;
-  letter-spacing: -4px;
+  letter-spacing: -3px;
   margin-bottom: 28px;
 }
 h1 em {
@@ -153,8 +155,8 @@ h1 em {
   align-items: center;
   gap: 34px;
   padding: 17px 22px;
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--accent-fill);
+  color: var(--text);
   border-radius: 5px;
   font-size: 15px;
   font-weight: 650;
@@ -196,13 +198,14 @@ h1 em {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 45%, #79854c24, transparent 65%);
+  background: radial-gradient(ellipse at 50% 45%, #d6eaa642, transparent 65%);
   isolation: isolate;
+  overflow: clip;
 }
 .stage-orbit {
   position: absolute;
   z-index: -1;
-  border: 1px solid #454b343f;
+  border: 1px solid #b8c6a955;
   border-radius: 50%;
   width: 430px;
   height: 430px;
@@ -213,19 +216,19 @@ h1 em {
   height: 535px;
   transform: rotate(-25deg) scaleX(0.91);
   border-style: dashed;
-  border-color: #454b3430;
+  border-color: #c0cdb04a;
 }
 .hero-card-mount {
   width: 265px;
   margin-top: 22px;
   transform: rotate(8deg);
-  filter: drop-shadow(0 25px 30px #0008);
+  filter: drop-shadow(0 25px 30px #20301425);
 }
 .stage-coordinate {
   position: absolute;
   font-size: 10px;
   letter-spacing: 2px;
-  color: #8c907e;
+  color: #6d765f;
 }
 .stage-coordinate.top {
   top: 10px;
@@ -257,7 +260,7 @@ h1 em {
   margin-top: 5px;
 }
 .round-button {
-  border: 1px solid #535744;
+  border: 1px solid #c5d1bb;
   background: transparent;
   border-radius: 50%;
   width: 37px;
@@ -266,13 +269,13 @@ h1 em {
   font-size: 22px;
 }
 .round-button:hover {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--accent-fill);
+  color: var(--text);
 }
 .stage-hint {
   font-size: 11px;
   letter-spacing: 0.4px;
-  color: #969b86;
+  color: #657056;
   margin: 24px 0 0;
 }
 .stage-hint span {
@@ -284,7 +287,7 @@ h1 em {
   border-block: 1px solid var(--line);
   overflow: hidden;
   padding: 21px 0;
-  background: #181a14;
+  background: #f7f9f3;
 }
 .ticker > div {
   display: flex;
@@ -334,6 +337,8 @@ h1 em {
 }
 .collection-toolbar {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: space-between;
   align-items: center;
   padding-block: 20px;
@@ -351,7 +356,7 @@ h1 em {
   gap: 8px;
   background: none;
   border: 0;
-  font-size: 12px;
+  font-size: 14px;
   padding: 6px 0;
 }
 .effect-toggle #effects-status {
@@ -369,7 +374,7 @@ h1 em {
 .toggle-track:after {
   content: "";
   display: block;
-  background: #1b2111;
+  background: #ffffff;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -377,7 +382,7 @@ h1 em {
   transition: transform 0.2s;
 }
 .effect-toggle[aria-pressed="false"] .toggle-track {
-  background: #777;
+  background: #737b6d;
 }
 .effect-toggle[aria-pressed="false"] .toggle-track:after {
   transform: translateX(0);
@@ -394,22 +399,23 @@ h1 em {
   position: relative;
   padding: 27px 31px 30px;
   background:
-    radial-gradient(ellipse at 50% 42%, #34372b60, transparent 80%), #1a1c18;
-  border: 1px solid #303329;
+    radial-gradient(ellipse at 50% 42%, #e8efd980, transparent 80%),
+    var(--surface);
+  border: 1px solid #e2e8dc;
   border-radius: 7px;
   transition:
     border-color 0.3s,
     background-color 0.3s;
 }
 .product:hover .product-surface {
-  border-color: #565d40;
-  background-color: #1f211b;
+  border-color: #bdcfad;
+  background-color: #f0f5e9;
 }
 .product-index {
   position: absolute;
   left: 12px;
   top: 12px;
-  color: #8e9480;
+  color: #657056;
   font-size: 10px;
   letter-spacing: 1px;
 }
@@ -417,7 +423,7 @@ h1 em {
   position: absolute;
   right: 12px;
   bottom: 11px;
-  color: #a5ad94;
+  color: #647853;
   font-size: 17px;
   pointer-events: none;
 }
@@ -444,12 +450,14 @@ h1 em {
   line-height: 1.4;
 }
 .product-number {
-  color: #a1a696;
+  color: #67705f;
   font-size: 12px;
   white-space: nowrap;
 }
 .product-bottom {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: space-between;
   align-items: center;
   margin-top: 14px;
@@ -457,12 +465,12 @@ h1 em {
 .finish-badge {
   display: inline-flex;
   padding: 5px 8px;
-  border: 1px solid #3b4033;
+  border: 1px solid #d7e2ce;
   border-radius: 3px;
   font-size: 12px;
   letter-spacing: 0.2px;
-  color: #bcc6a5;
-  background: #dafa7505;
+  color: #4f643d;
+  background: #f4f8ee;
 }
 .product-inspect {
   font-size: 12px;
@@ -523,7 +531,7 @@ h1 em {
   letter-spacing: -1px;
 }
 .site-footer p {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.9;
   color: var(--muted);
   margin: 8px 0 0;
@@ -540,8 +548,8 @@ h1 em {
   top: -70px;
   left: 16px;
   z-index: 1000;
-  background: var(--accent);
-  color: #111;
+  background: var(--accent-fill);
+  color: #182017;
   padding: 14px;
 }
 .skip-link:focus {
@@ -582,7 +590,7 @@ h1 em {
   width: 100%;
   display: grid;
   transform: rotateY(var(--rotate-x)) rotateX(var(--rotate-y));
-  box-shadow: 0 8px 20px #0007;
+  box-shadow: 0 8px 20px #20301426;
   cursor: pointer;
   will-change: auto;
 }
@@ -625,7 +633,7 @@ h1 em {
 }
 .card.is-interacting .card__rotator {
   box-shadow:
-    0 12px 30px #0009,
+    0 12px 30px #20301433,
     0 0 24px -14px var(--card-glow);
 }
 .card.is-inspection .card__rotator {
@@ -643,8 +651,8 @@ h1 em {
   place-content: center;
   text-align: center;
   padding: 20px;
-  background: #20251a;
-  border: 1px solid #74844f;
+  background: #f4f7ef;
+  border: 1px solid #bbcaab;
   color: var(--text);
   border-radius: 12px;
   font-size: 14px;
@@ -659,12 +667,12 @@ dialog {
   width: min(940px, calc(100% - 40px));
   max-height: calc(100dvh - 40px);
   padding: 54px;
-  border: 1px solid #414837;
+  border: 1px solid #d7e0ce;
   border-radius: 14px;
-  background: #191c17;
+  background: #ffffff;
   color: var(--text);
   overflow: auto;
-  box-shadow: 0 30px 100px #0009;
+  box-shadow: 0 30px 100px #20301433;
 }
 dialog[open] {
   display: grid;
@@ -672,7 +680,7 @@ dialog[open] {
   gap: 58px;
 }
 dialog::backdrop {
-  background: #080a08db;
+  background: #23311e55;
   backdrop-filter: blur(9px);
 }
 body:has(dialog[open]) {
@@ -685,7 +693,7 @@ body:has(dialog[open]) {
   width: 36px;
   height: 36px;
   background: transparent;
-  border: 1px solid #414837;
+  border: 1px solid #d7e0ce;
   border-radius: 50%;
   font-size: 25px;
   line-height: 1;
@@ -712,8 +720,8 @@ body:has(dialog[open]) {
   justify-content: center;
 }
 .card-controls button {
-  background: #22271e;
-  border: 1px solid #454d38;
+  background: #f2f6ec;
+  border: 1px solid #cbd9bc;
   border-radius: 4px;
   font-size: 12px;
   padding: 9px 14px;
@@ -779,7 +787,7 @@ dd {
   margin-top: 25px;
 }
 .inspector-navigation button {
-  border: 1px solid #414837;
+  border: 1px solid #d7e0ce;
   background: none;
   width: 36px;
   height: 36px;
@@ -884,7 +892,7 @@ dd {
     margin-bottom: 18px;
   }
   h1 {
-    font-size: clamp(42px, 8.9vw, 66px);
+    font-size: clamp(34px, 8.5vw, 54px);
     letter-spacing: -2.5px;
     line-height: 1.07;
     margin-bottom: 20px;
@@ -964,7 +972,7 @@ dd {
     font-size: 10px;
   }
   .effect-toggle {
-    font-size: 12px;
+    font-size: 13px;
     gap: 5px;
   }
   .card-grid {
@@ -1031,7 +1039,7 @@ dd {
     gap: 20px;
   }
   .site-footer p {
-    font-size: 10px;
+    font-size: 12px;
   }
   .small-brand {
     font-size: 25px;
