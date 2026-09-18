@@ -15,7 +15,7 @@ function createCard(card, { inspection = false, eager = false } = {}) {
   root.dataset.subtypes = card.subtypes;
   root.dataset.supertype = "pokémon";
   root.dataset.trainerGallery = "false";
-  root.innerHTML = `<div class="card__translater"><button class="card__rotator" type="button" aria-label="${inspection ? "Tilt" : "Inspect"} ${card.name}"><img class="card__back" src="./assets/cards/back.jpg" alt="Pokémon card back" width="660" height="921" draggable="false"><div class="card__front"><img src="${card.image}" alt="${card.name}, ${card.set}, ${card.number}" width="734" height="1024" loading="${eager ? "eager" : "lazy"}" decoding="async" draggable="false"><div class="card__shine"></div><div class="card__glare"></div></div></button></div>`;
+  root.innerHTML = `<div class="card__translater"><button class="card__rotator" type="button" aria-label="${inspection ? "Incliner" : "Examiner"} ${card.name}"><img class="card__back" src="./assets/cards/back.jpg" alt="Dos de la carte Pokémon" width="660" height="921" draggable="false"><div class="card__front"><img src="${card.image}" alt="${card.name}, ${card.set}, ${card.number}" width="734" height="1024" loading="${eager ? "eager" : "lazy"}" decoding="async" draggable="false"><div class="card__shine"></div><div class="card__glare"></div></div></button></div>`;
   const button = root.querySelector("button");
   const frontImage = root.querySelector(".card__front img");
   frontImage.addEventListener(
@@ -23,7 +23,7 @@ function createCard(card, { inspection = false, eager = false } = {}) {
     () => {
       const fallback = document.createElement("div");
       fallback.className = "image-fallback";
-      fallback.textContent = `${card.name} — artwork unavailable. Please reload to try again.`;
+      fallback.textContent = `${card.name} — illustration indisponible. Rechargez la page pour réessayer.`;
       root.append(fallback);
     },
     { once: true },
@@ -185,7 +185,7 @@ const grid = document.querySelector("#card-grid");
 cards.forEach((card, index) => {
   const article = document.createElement("article");
   article.className = "product";
-  article.innerHTML = `<div class="product-surface"><span class="product-index">${String(index + 1).padStart(2, "0")}</span><span class="expand-indicator" aria-hidden="true">↗</span></div><div class="product-info"><p class="product-set">${card.set}</p><div class="product-heading"><h3>${card.name}</h3><span class="product-number">${card.number}</span></div><div class="product-bottom"><span class="finish-badge">${card.finish}</span><button class="product-inspect" aria-label="Take a closer look at ${card.name}">Take a look <span aria-hidden="true">↗</span></button></div></div>`;
+  article.innerHTML = `<div class="product-surface"><span class="product-index">${String(index + 1).padStart(2, "0")}</span><span class="expand-indicator" aria-hidden="true">↗</span></div><div class="product-info"><p class="product-set">${card.set}</p><div class="product-heading"><h3>${card.name}</h3><span class="product-number">${card.number}</span></div><div class="product-bottom"><span class="finish-badge">${card.finish}</span><button class="product-inspect" aria-label="Examiner la carte ${card.name}">Voir la carte <span aria-hidden="true">↗</span></button></div></div>`;
   article.querySelector(".product-surface").append(createCard(card).root);
   article
     .querySelector(".product-inspect")
@@ -212,13 +212,13 @@ function renderInspector() {
   };
   for (const [id, value] of Object.entries(values))
     document.getElementById(id).textContent = value;
-  document.querySelector("#flip-card").textContent = "↻ Flip card";
+  document.querySelector("#flip-card").textContent = "↻ Retourner";
   document.querySelector("#flip-card").setAttribute("aria-pressed", "false");
   document.querySelector("#inspector-hint").textContent = window.matchMedia(
     "(pointer: coarse)",
   ).matches
-    ? "Drag across the card to explore the foil."
-    : "Move across the card to explore the foil.";
+    ? "Faites glisser votre doigt sur la carte pour explorer ses reflets."
+    : "Survolez la carte pour explorer ses reflets.";
 }
 function openInspector(index) {
   activeIndex = index;
@@ -235,8 +235,8 @@ function flipInspection() {
   inspectionController.flip();
   const flipped = inspectionController.root.classList.contains("is-flipped");
   document.querySelector("#flip-card").textContent = flipped
-    ? "↻ Show front"
-    : "↻ Flip card";
+    ? "↻ Voir le recto"
+    : "↻ Retourner";
   document
     .querySelector("#flip-card")
     .setAttribute("aria-pressed", String(flipped));
@@ -283,6 +283,6 @@ document.querySelector("#effects-toggle").addEventListener("click", (event) => {
   document.body.classList.toggle("effects-off", !effectsEnabled);
   event.currentTarget.setAttribute("aria-pressed", String(effectsEnabled));
   document.querySelector("#effects-status").textContent = effectsEnabled
-    ? "on"
-    : "off";
+    ? "activés"
+    : "désactivés";
 });

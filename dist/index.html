@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111211" />
+    <meta name="theme-color" content="#ffffff" />
     <meta
       name="description"
-      content="Get a feel for your next favorite Pokémon card. Explore Zephyr’s interactive selection of holographic cards."
+      content="Découvrez votre prochaine carte Pokémon coup de cœur. Explorez la sélection interactive de cartes holographiques Zephyr."
     />
-    <title>Zephyr — A different kind of card shop</title>
+    <title>Zephyr — Les cartes Pokémon autrement</title>
     <link
       rel="icon"
       type="image/svg+xml"
@@ -19,40 +19,42 @@
     <script type="module" src="./app.js"></script>
   </head>
   <body>
-    <a href="#collection" class="skip-link">Skip to the collection</a>
+    <a href="#collection" class="skip-link">Aller à la collection</a>
     <header class="site-header shell">
-      <a href="#" class="brand" aria-label="Zephyr home"
+      <a href="#" class="brand" aria-label="Accueil Zephyr"
         ><svg viewBox="0 0 40 40" aria-hidden="true">
           <path d="M6 8h29L15 25h19L5 35 25 16H6z" fill="currentColor" /></svg
         >zephyr<span class="brand-period">.</span></a
       >
-      <nav aria-label="Main navigation">
-        <a href="#collection">The collection <span>08</span></a
-        ><a href="#experience">The experience</a>
+      <nav aria-label="Navigation principale">
+        <a href="#collection">La collection <span>08</span></a
+        ><a href="#experience">L’expérience</a>
       </nav>
-      <span class="edition-label">COLLECTOR’S EDITION / 001</span>
+      <span class="edition-label">ÉDITION COLLECTION / 001</span>
     </header>
     <main>
       <section class="hero shell" id="experience" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">
-            <span class="tiny-spark">✳</span> A DIFFERENT KIND OF CARD SHOP
+            <span class="tiny-spark">✳</span> LES CARTES POKÉMON AUTREMENT
           </p>
-          <h1 id="hero-title">Some cards<br />just <em>hit different.</em></h1>
+          <h1 id="hero-title">
+            Le coup de cœur.<br /><em>Au premier reflet.</em>
+          </h1>
           <p class="hero-description">
-            The artwork. The texture. That first flash of foil.<br
+            L’illustration. La texture. Ce premier éclat holographique.<br
               class="desktop-break"
             />
-            Get a feel for your next favorite.
+            Découvrez votre prochaine carte coup de cœur.
           </p>
           <a class="primary-button" href="#collection"
-            >Explore the collection <span aria-hidden="true">↗</span></a
+            >Explorer la collection <span aria-hidden="true">↗</span></a
           >
           <div class="hero-note">
             <span class="orbit-icon" aria-hidden="true">◎</span>
             <p>
-              Made to be experienced.<br /><span
-                >Hover to tilt. Click to take a closer look.</span
+              Des cartes qui se découvrent en mouvement.<br /><span
+                >Survolez pour incliner. Cliquez pour voir de plus près.</span
               >
             </p>
           </div>
@@ -60,34 +62,35 @@
         <div class="hero-stage">
           <div class="stage-orbit orbit-one" aria-hidden="true"></div>
           <div class="stage-orbit orbit-two" aria-hidden="true"></div>
-          <span class="stage-coordinate top">THE SPOTLIGHT / 001</span>
+          <span class="stage-coordinate top">À LA UNE / 001</span>
           <div id="hero-card" class="hero-card-mount"></div>
           <span class="stage-coordinate left" aria-hidden="true"
-            >A NEW PERSPECTIVE</span
+            >UN AUTRE REGARD</span
           >
           <div class="stage-caption">
             <div>
               <strong>Umbreon VMAX</strong
-              ><span>Evolving Skies · Alternate art</span>
+              ><span>Evolving Skies · Illustration alternative</span>
             </div>
             <button
               class="round-button"
               id="inspect-hero"
-              aria-label="Inspect Umbreon VMAX"
+              aria-label="Examiner Umbreon VMAX"
             >
               ↗
             </button>
           </div>
           <p class="stage-hint">
-            <span aria-hidden="true">✧</span> Move your cursor. Find the light.
+            <span aria-hidden="true">✧</span> Déplacez le curseur. Suivez la
+            lumière.
           </p>
         </div>
       </section>
       <div class="ticker" aria-hidden="true">
         <div>
-          FOR THE ART <span>✳</span> FOR THE FEELING <span>✳</span> FOR THE
-          COLLECTION <span>✳</span> FOR THE ART <span>✳</span> FOR THE FEELING
-          <span>✳</span> FOR THE COLLECTION <span>✳</span>
+          POUR L’ART <span>✳</span> POUR L’ÉMOTION <span>✳</span> POUR LA
+          COLLECTION <span>✳</span> POUR L’ART <span>✳</span> POUR L’ÉMOTION
+          <span>✳</span> POUR LA COLLECTION <span>✳</span>
         </div>
       </div>
       <section
@@ -97,66 +100,63 @@
       >
         <div class="collection-heading">
           <div>
-            <p class="eyebrow">HANDPICKED, EVERY ONE.</p>
-            <h2 id="collection-title">Find your kind of rare<span>.</span></h2>
+            <p class="eyebrow">CHAQUE CARTE A SON HISTOIRE.</p>
+            <h2 id="collection-title">
+              Trouvez votre perle rare<span>.</span>
+            </h2>
           </div>
           <p>
-            Eight cards. A whole spectrum of foil.<br />Pick one up and see what
-            catches your eye.
+            Huit cartes. Mille façons de capter la lumière.<br />Approchez-vous
+            et laissez-vous surprendre.
           </p>
         </div>
         <div class="collection-toolbar">
-          <span>THE SELECTION <span class="count-label">08</span></span
+          <span>LA SÉLECTION <span class="count-label">08</span></span
           ><button
             class="effect-toggle"
             id="effects-toggle"
             type="button"
             aria-pressed="true"
           >
-            <span class="toggle-track" aria-hidden="true"></span> Holographic
-            effects <span id="effects-status">on</span>
+            <span class="toggle-track" aria-hidden="true"></span> Effets
+            holographiques <span id="effects-status">activés</span>
           </button>
         </div>
         <div class="card-grid" id="card-grid"></div>
       </section>
       <section class="closing-note shell">
         <span aria-hidden="true">✳</span>
-        <h2>A little nostalgia.<br />A whole lot of possibility.</h2>
+        <h2>Un peu de nostalgie.<br />Beaucoup d’émotion.</h2>
         <p>
-          Take your time. Turn a card.<br />Sometimes the right one finds you.
+          Prenez le temps. Inclinez une carte.<br />Le coup de cœur n’est jamais
+          très loin.
         </p>
-        <a href="#collection" aria-label="Back to the collection">↑</a>
+        <a href="#collection" aria-label="Retour à la collection">↑</a>
       </section>
     </main>
     <footer class="site-footer shell">
       <div>
         <a class="brand small-brand" href="#">zephyr.</a>
-        <p>An interactive concept store. Cards are for display only.</p>
+        <p>
+          Une boutique de démonstration. Cartes présentées à titre
+          d’illustration.
+        </p>
       </div>
-      <p>
-        Card effects by
-        <a
-          href="https://github.com/simeydotme/pokemon-cards-css"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Simon Goellner ↗</a
-        ><br />Pokémon artwork © its respective owners.
-      </p>
     </footer>
     <dialog id="inspector" aria-labelledby="inspector-title">
       <button
         class="close-button"
         id="close-inspector"
-        aria-label="Close card inspection"
+        aria-label="Fermer l’aperçu de la carte"
       >
         ×
       </button>
       <div class="inspector-art">
         <div id="inspector-card"></div>
-        <p id="inspector-hint">Move across the card to explore the foil.</p>
+        <p id="inspector-hint">Survolez la carte pour explorer ses reflets.</p>
         <div class="card-controls">
-          <button id="flip-card" type="button">↻ Flip card</button
-          ><button id="reset-card" type="button">Reset view</button>
+          <button id="flip-card" type="button">↻ Retourner</button
+          ><button id="reset-card" type="button">Réinitialiser</button>
         </div>
       </div>
       <div class="inspector-details">
@@ -167,33 +167,35 @@
         <p id="inspector-description"></p>
         <dl>
           <div>
-            <dt>Card number</dt>
+            <dt>Numéro de carte</dt>
             <dd id="inspector-number"></dd>
           </div>
           <div>
-            <dt>Series</dt>
+            <dt>Extension</dt>
             <dd id="inspector-series"></dd>
           </div>
           <div>
-            <dt>Language</dt>
-            <dd>English</dd>
+            <dt>Langue</dt>
+            <dd>Anglais</dd>
           </div>
         </dl>
         <p class="demo-note">
-          Part of the Zephyr display collection.<br />This is an interactive
-          preview, with no checkout.
+          Une carte de la sélection Zephyr.<br />Démonstration interactive, sans
+          possibilité d’achat.
         </p>
         <div class="inspector-navigation">
-          <button id="previous-card" aria-label="Inspect previous card">
+          <button id="previous-card" aria-label="Examiner la carte précédente">
             ←</button
           ><span id="inspector-position" aria-live="polite"></span
-          ><button id="next-card" aria-label="Inspect next card">→</button>
+          ><button id="next-card" aria-label="Examiner la carte suivante">
+            →
+          </button>
         </div>
       </div>
     </dialog>
     <noscript
       ><p class="noscript-message">
-        Please enable JavaScript to explore the interactive card collection.
+        Activez JavaScript pour explorer la collection de cartes interactives.
       </p></noscript
     >
   </body>

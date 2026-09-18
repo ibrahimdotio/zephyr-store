@@ -1,6 +1,6 @@
 # Zephyr
 
-A mock Pokémon card storefront built around tactile, interactive holographic cards. The presentation uses a dark, lime-accented storefront and eight curated cards, with the original **Pokémon Cards CSS v2** foil treatments by Simon Goellner.
+A mock Pokémon card storefront built around tactile, interactive holographic cards. The presentation uses a French-language storefront with a white background, green accents, and eight English-language cards, with the original **Pokémon Cards CSS v2** foil treatments by Simon Goellner.
 
 ## Run locally
 
@@ -58,7 +58,7 @@ GitHub Pages publishes each update to `gh-pages`. Keep website edits on `main` s
 
 ## Credits and licensing
 
-The code is distributed under GPL-3.0; see [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Simon Goellner's original card effects and license are retained, with a visible credit in the website footer.
+The code is distributed under GPL-3.0; see [LICENSE](LICENSE) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Simon Goellner's original card effects and license are retained in the source and accompanying notices. The demonstration storefront does not display an author-credit footer.
 
 The original project's unmasked fallback textures are used. Card-specific etched foil maps and masks are not bundled, so fine foil placement is an approximation of the physical cards.
 
