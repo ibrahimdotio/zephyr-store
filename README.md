@@ -35,7 +35,26 @@ This is a display-only concept. There are no payments, customer accounts, actual
 - `effects.css`: the applicable original foil styles, combined with asset paths adapted for relative hosting.
 - `assets/`: locally stored card artwork and foil textures.
 
-Upload the contents of `dist/` to any static host. Relative asset paths support hosting under a repository subdirectory, including GitHub Pages. No hosting service is configured automatically.
+Relative asset paths support hosting under a repository subdirectory, including GitHub Pages.
+
+## GitHub Pages deployment
+
+The website is published from the `gh-pages` branch, with the contents of `dist/` at the branch root. In **Settings → Pages**, the configuration is:
+
+- Source: **Deploy from a branch**
+- Branch: **gh-pages**
+- Folder: **/ (root)**
+
+Website: https://ibrahimdotio.github.io/zephyr-store/
+
+To publish future changes, edit and commit the site on `main`, then run:
+
+```sh
+git push origin main
+git subtree push --prefix dist origin gh-pages
+```
+
+GitHub Pages publishes each update to `gh-pages`. Keep website edits on `main` so the deployment branch can continue to be generated from `dist/`. The `.nojekyll` file tells Pages to serve the static files directly.
 
 ## Credits and licensing
 
