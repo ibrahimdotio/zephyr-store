@@ -1,6 +1,6 @@
 # Zephyr
 
-A mock Pokémon card storefront built around tactile, interactive holographic cards. The presentation uses a French-language storefront with a white background, green accents, and eight English-language cards, with the original **Pokémon Cards CSS v2** foil treatments by Simon Goellner.
+A mock Pokémon card storefront built around tactile, interactive holographic cards. The presentation uses a French-language storefront with a white background, green accents, and seven Japanese-edition cards supplied by the project owner, with the original **Pokémon Cards CSS v2** foil treatments by Simon Goellner.
 
 ## Run locally
 
@@ -31,9 +31,9 @@ This is a display-only concept. There are no payments, customer accounts, actual
 - `index.html`: storefront and accessible native dialog.
 - `styles.css`: Zephyr layout, responsive rules, card integration, and reduced-motion behavior.
 - `app.js`: card pointer interaction, inspection, flipping, and keyboard controls.
-- `cards.js`: the selected card data, local artwork paths, and original image sources.
+- `cards.js`: the selected card data, local scan paths, and scan-source notes.
 - `effects.css`: the applicable original foil styles, combined with asset paths adapted for relative hosting.
-- `assets/`: locally stored card artwork and foil textures.
+- `assets/`: locally stored project-provided card scans and foil textures.
 
 Relative asset paths support hosting under a repository subdirectory, including GitHub Pages.
 

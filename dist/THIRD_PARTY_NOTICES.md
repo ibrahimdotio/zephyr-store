@@ -20,13 +20,9 @@ The storefront layout and plain-JavaScript interaction controller were written f
 
 ## Card data and artwork
 
-Original card selections were cross-checked against the card dataset in Pokémon Cards CSS. Artwork and card identities were retrieved from the TCGdex API (`https://api.tcgdex.net/v2/en/cards/`) and `https://assets.tcgdex.net/`. The precise artwork source URL for every card is recorded in `dist/cards.js`.
+The seven card front and back images in `assets/cards/scans/` are scans supplied by the project owner from `wetransfer_scan-test_2026-09-21_1206`. The scan-pair provenance for each selected card is recorded in `cards.js`.
 
-TCGdex: https://tcgdex.dev/
-
-Card back: https://tcg.pokemon.com/assets/img/global/tcg-card-back-2x.jpg
-
-Pokémon and Pokémon character names are trademarks of Nintendo. Pokémon card art belongs to its respective rights holders, including Pokémon, Nintendo, Creatures, and GAME FREAK. These assets are included for the requested demonstration and are not licensed under GPL-3.0. Zephyr is an independent mock storefront and is not endorsed by those companies.
+Pokémon and Pokémon character names are trademarks of Nintendo. Pokémon card art belongs to its respective rights holders, including Pokémon, Nintendo, Creatures, and GAME FREAK. These scans are included for the requested demonstration and are not licensed under GPL-3.0. Zephyr is an independent mock storefront and is not endorsed by those companies.
 
 ## Fonts
 
