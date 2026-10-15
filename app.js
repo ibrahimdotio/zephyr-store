@@ -13,9 +13,9 @@ function createCard(card, { inspection = false, eager = false } = {}) {
   root.className = `card interactive is-resting ${card.type}${inspection ? " is-inspection" : ""}`;
   root.dataset.rarity = card.effect;
   root.dataset.subtypes = card.subtypes;
-  root.dataset.supertype = "pokémon";
+  root.dataset.supertype = card.supertype ?? "pokémon";
   root.dataset.trainerGallery = "false";
-  root.innerHTML = `<div class="card__translater"><button class="card__rotator" type="button" aria-label="${inspection ? "Incliner" : "Examiner"} ${card.name}"><img class="card__back" src="./assets/cards/back.jpg" alt="Dos de la carte Pokémon" width="660" height="921" draggable="false"><div class="card__front"><img src="${card.image}" alt="${card.name}, ${card.set}, ${card.number}" width="734" height="1024" loading="${eager ? "eager" : "lazy"}" decoding="async" draggable="false"><div class="card__shine"></div><div class="card__glare"></div></div></button></div>`;
+  root.innerHTML = `<div class="card__translater"><button class="card__rotator" type="button" aria-label="${inspection ? "Incliner" : "Examiner"} ${card.name}"><img class="card__back" src="${card.back}" alt="Dos de la carte Pokémon ${card.name}" width="330" height="461" draggable="false"><div class="card__front"><img src="${card.image}" alt="${card.name}, ${card.set}, ${card.number}" width="570" height="796" loading="${eager ? "eager" : "lazy"}" decoding="async" draggable="false"><div class="card__shine"></div><div class="card__glare"></div></div></button></div>`;
   const button = root.querySelector("button");
   const frontImage = root.querySelector(".card__front img");
   frontImage.addEventListener(
@@ -208,6 +208,7 @@ function renderInspector() {
     "inspector-description": card.description,
     "inspector-number": card.number,
     "inspector-series": card.set,
+    "inspector-language": card.language,
     "inspector-position": `${String(activeIndex + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`,
   };
   for (const [id, value] of Object.entries(values))
